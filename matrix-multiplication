@@ -1,0 +1,19 @@
+static int[][] matrixProduct(int[][] arr1, int[][] arr2) {
+        if (arr1[0].length != arr2.length) {
+            System.out.print("• INVALID MATRICES •");
+            return new int[][] {{-1}} ;
+        }
+        int[][] ans = new int[arr1.length][arr2[0].length];
+
+        for (int i = 0; i < ans.length; i++) {
+            for (int j = 0; j < ans.length; j++) {
+                for (int k = 0; k < arr1[0].length; k++) {
+                    ans[i][j] += arr1[i][k] * arr2[k][j];
+                }
+            }
+        }
+        for (int i = 0; i < ans.length; i++) {
+            System.out.println(Arrays.toString(ans[i]));
+        }
+        return ans;
+    }
