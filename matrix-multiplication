@@ -2,7 +2,7 @@ static int[][] matrixProduct(int[][] arr1, int[][] arr2) {
         if (arr1[0].length != arr2.length) {
             System.out.print("• INVALID MATRICES •");
             return new int[][] {{-1}} ;
-        }
+        } // here
         int[][] ans = new int[arr1.length][arr2[0].length];
 
         for (int i = 0; i < ans.length; i++) {
