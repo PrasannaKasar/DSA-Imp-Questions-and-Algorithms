@@ -1,0 +1,14 @@
+public List<Integer> findDuplicates(int[] nums) {
+        int[] sorted = new int[nums.length]; // declaring an array which will contain sorted elements
+        LinkedList<Integer> ans = new LinkedList<>(); // as number of duplicate elements is unknown, we have to create a LinkedList
+        for (int i= 0; i < nums.length; i++) { // 'i' is not imp, but the index of the all the elements, hence further 'num' ((to be)index of the elements of the 'sorted') is used
+            int num = nums[i]-1; // getting the first element, actually its index (as -1 is written) as array elemnts are from 1 to n, where n is the size of the array
+            if (sorted[num] != 0) { // checking if the index is already filled with same element 
+                                    // as elements are from 1 to n, no element is 0 (why is this explaination imp, coz initially when array is created it has default-
+                                    // value of 0 at all places
+                ans.add(num+1); // if it is, then its a duplicate element
+            }
+            sorted[num] = num+1; // otherwise its occuring for the first time
+        }
+        return ans;
+    }
